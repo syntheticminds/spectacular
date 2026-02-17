@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    command:
+      - sh
+      - -lc
+      - |
+        composer setup
+        echo
+        echo '========================================'
+        echo '  Spectacular is live:'
+        echo '  http://localhost:8000'
+        echo '========================================'
+        echo
+        exec php artisan serve --host=0.0.0.0 --port=8000 --quiet
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/var/www/html

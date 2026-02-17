@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/forms";
+
+@source "../views/app.blade.php";
+@source "../**/*.vue";
+
+
+@theme {
+    --sidebar-width: 320px;
+    --main-width: 896px;
+    --sidepanel-width: 512px;
+    --font-display: "Funnel Sans", sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.link {
+    @apply text-gray-500 underline hover:text-black transition-all duration-500;
+}
+
+.btn {
+    @apply flex font-display justify-center items-center gap-2 uppercase text-sm rounded-xl text-lg text-center hover:ring-2 transition duration-500 disabled:opacity-50 disabled:cursor-not-allowed p-2 px-4 print:hidden;
+}
+
+.btn.btn-sm {
+    @apply text-sm p-1 px-2;
+}
+
+.btn.btn-primary {
+    @apply bg-gray-800 text-white ring-gray-800 hover:bg-black hover:ring-2 hover:ring-gray-800;
+}
+
+.btn.btn-primary-outline {
+    @apply border border-gray-800 text-gray-800 ring-inset hover:ring;
+}
+
+.btn.btn-danger {
+    @apply bg-red-400 text-white ring-red-400 hover:bg-red-500 hover:ring-2 hover:ring-red-500 hover:disabled:ring-0 hover:disabled:bg-red-400;
+}
+
+.btn.btn-danger-outline {
+    @apply border border-red-400 text-red-400 ring-red-400 ring-inset hover:ring;
+}
+
+.multiline-text p {
+    @apply mb-4;
+}
+
+.multiline-text p:last-child {
+    @apply mb-0;
+}
+
+[id] {
+    scroll-margin-top: 5rem;
+}
+
+.prose {
+    p:not(:last-child) {
+        @apply not-last:mb-4;
+    }
+
+    code:not(pre code) {
+        @apply bg-gray-100 p-1 rounded;
+    }
+
+    a {
+        @apply text-gray-500 underline hover:text-black transition-all duration-500;
+    }
+
+    h1 {
+        @apply font-display font-semibold text-4xl not-last:mb-4;
+    }
+
+    h2 {
+        @apply font-display font-semibold text-3xl not-last:mb-4;
+    }
+
+    h3 {
+        @apply font-display font-semibold text-2xl not-last:mb-4;
+    }
+
+    h4 {
+        @apply font-display font-semibold text-xl not-last:mb-4;
+    }
+
+    h5 {
+        @apply font-display font-semibold text-lg not-last:mb-4;
+    }
+
+    blockquote {
+        @apply border-l-4 border-gray-200 pl-4 text-lg not-last:mb-4;
+    }
+
+    ul {
+       @apply list-disc list-inside ml-4 not-last:mb-4;
+    }
+
+    li p {
+        @apply inline; /* Fixes TipTap putting <li> content in a <p> */
+    }
+
+    ol {
+       @apply list-decimal list-inside ml-4 not-last:mb-4;
+    }
+
+    pre {
+        @apply bg-gray-100 p-4 rounded not-last:mb-4;
+    }
+
+    hr {
+        @apply text-gray-200 my-4 last:mb-0;
+    }
+}
