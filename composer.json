@@ -14,7 +14,6 @@
         "laravel/tinker": "^2.10.1",
         "league/html-to-markdown": "^5.1",
         "mews/purifier": "^3.4",
-        "spatie/laravel-validation-rules": "^3.4",
         "staudenmeir/eloquent-has-many-deep": "^1.7",
         "tightenco/ziggy": "^2.6"
     },
