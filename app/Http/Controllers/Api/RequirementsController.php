@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Spectacular\Core\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\RequirementResource;
-use App\Http\Requests\StoreRequirementRequest;
-use App\Http\Requests\UpdateRequirementRequest;
-use App\Models\Requirement;
+use Spectacular\Core\Http\Controllers\Controller;
+use Spectacular\Core\Http\Resources\RequirementResource;
+use Spectacular\Core\Http\Requests\StoreRequirementRequest;
+use Spectacular\Core\Http\Requests\UpdateRequirementRequest;
+use Spectacular\Core\Models\Requirement;
 use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\JsonResource;
 

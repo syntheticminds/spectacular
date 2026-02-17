@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\FeaturesController;
-use App\Http\Controllers\Api\ProjectsController;
-use App\Http\Controllers\Api\UnknownsController;
-use App\Http\Controllers\Api\RequirementsController;
-use App\Http\Controllers\Api\TasksController;
-use App\Http\Controllers\Api\UsersController;
+use Spectacular\Core\Http\Controllers\Api\FeaturesController;
+use Spectacular\Core\Http\Controllers\Api\ProjectsController;
+use Spectacular\Core\Http\Controllers\Api\UnknownsController;
+use Spectacular\Core\Http\Controllers\Api\RequirementsController;
+use Spectacular\Core\Http\Controllers\Api\TasksController;
+use Spectacular\Core\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(FeaturesController::class)->group(function () {

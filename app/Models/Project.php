@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Spectacular\Core\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Illuminate\Support\Str;
-use App\Models\Feature;
-use App\Models\Requirement;
-use App\Models\Task;
-use App\Models\Unknown;
+use Spectacular\Core\Models\Feature;
+use Spectacular\Core\Models\Requirement;
+use Spectacular\Core\Models\Task;
+use Spectacular\Core\Models\Unknown;
 
 class Project extends Model
 {

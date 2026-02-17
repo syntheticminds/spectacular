@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Spectacular\Core\Http\Controllers;
 
-use App\Models\Project;
+use Spectacular\Core\Models\Project;
 use Illuminate\Http\Response;
 
 class ExportController extends Controller

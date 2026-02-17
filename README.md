@@ -2,9 +2,9 @@
 
 ## About Spectacular
 
-Spectacular is an open-source functional specification manager.
+Spectacular is a free open-source functional specification manager.
 
-* Create detailed specfications
+* Build detailed specfications
 * Maintain them as requirements change
 * Estimate effort and track progress
 * Document ambiguities and highlight blockers

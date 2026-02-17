@@ -1,6 +1,6 @@
 <?php
 
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\StringsServiceProvider::class,
+    Spectacular\Core\Providers\AppServiceProvider::class,
+    Spectacular\Core\Providers\StringsServiceProvider::class,
 ];

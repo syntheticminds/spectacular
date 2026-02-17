@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Spectacular\Core\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

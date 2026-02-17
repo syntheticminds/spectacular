@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Spectacular\Core\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\UnknownResource;
-use App\Http\Requests\StoreUnknownRequest;
-use App\Http\Requests\UpdateUnknownRequest;
-use App\Models\Unknown;
+use Spectacular\Core\Http\Controllers\Controller;
+use Spectacular\Core\Http\Resources\UnknownResource;
+use Spectacular\Core\Http\Requests\StoreUnknownRequest;
+use Spectacular\Core\Http\Requests\UpdateUnknownRequest;
+use Spectacular\Core\Models\Unknown;
 use Illuminate\Http\Response;
 
 class UnknownsController extends Controller

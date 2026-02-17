@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Feature;
-use App\Models\Project;
-use App\Models\Requirement;
+use Spectacular\Core\Models\Feature;
+use Spectacular\Core\Models\Project;
+use Spectacular\Core\Models\Requirement;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 

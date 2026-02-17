@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Spectacular\Core\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\TaskResource;
-use App\Http\Requests\StoreTaskRequest;
-use App\Http\Requests\UpdateTaskRequest;
-use App\Models\Task;
+use Spectacular\Core\Http\Controllers\Controller;
+use Spectacular\Core\Http\Resources\TaskResource;
+use Spectacular\Core\Http\Requests\StoreTaskRequest;
+use Spectacular\Core\Http\Requests\UpdateTaskRequest;
+use Spectacular\Core\Models\Task;
 use Illuminate\Http\Response;
 
 class TasksController extends Controller

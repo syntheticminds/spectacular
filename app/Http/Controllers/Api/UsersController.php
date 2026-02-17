@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Spectacular\Core\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
+use Spectacular\Core\Http\Controllers\Controller;
+use Spectacular\Core\Http\Resources\UserResource;
+use Spectacular\Core\Http\Requests\StoreUserRequest;
+use Spectacular\Core\Http\Requests\UpdateUserRequest;
+use Spectacular\Core\Models\User;
 use Illuminate\Http\Response;
 
 class UsersController extends Controller

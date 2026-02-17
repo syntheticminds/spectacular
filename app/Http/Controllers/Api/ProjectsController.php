@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Spectacular\Core\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\ProjectResource;
-use App\Http\Requests\OrganiseProjectRequest;
-use App\Http\Requests\StoreProjectRequest;
-use App\Http\Requests\UpdateProjectRequest;
-use App\Models\Project;
+use Spectacular\Core\Http\Controllers\Controller;
+use Spectacular\Core\Http\Resources\ProjectResource;
+use Spectacular\Core\Http\Requests\OrganiseProjectRequest;
+use Spectacular\Core\Http\Requests\StoreProjectRequest;
+use Spectacular\Core\Http\Requests\UpdateProjectRequest;
+use Spectacular\Core\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;

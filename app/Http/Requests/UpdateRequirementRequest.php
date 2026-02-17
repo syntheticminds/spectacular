@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Spectacular\Core\Http\Requests;
 
-use App\Rules\QuarterHour as QuarterHourRule;
+use Spectacular\Core\Rules\QuarterHour as QuarterHourRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateRequirementRequest extends FormRequest

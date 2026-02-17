@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Spectacular\Core\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\FeatureResource;
-use App\Http\Requests\StoreFeatureRequest;
-use App\Http\Requests\UpdateFeatureRequest;
-use App\Models\Feature;
+use Spectacular\Core\Http\Controllers\Controller;
+use Spectacular\Core\Http\Resources\FeatureResource;
+use Spectacular\Core\Http\Requests\StoreFeatureRequest;
+use Spectacular\Core\Http\Requests\UpdateFeatureRequest;
+use Spectacular\Core\Models\Feature;
 use Illuminate\Http\Response;
 
 class FeaturesController extends Controller

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Spectacular\Core\Http\Requests;
 
-use App\Rules\SluggableName as SluggableNameRule;
+use Spectacular\Core\Rules\SluggableName as SluggableNameRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreProjectRequest extends FormRequest
