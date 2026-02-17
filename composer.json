@@ -1,13 +1,12 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "spectacular/core",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Spectacular is an open-source functional specification manager.",
     "keywords": [
-        "laravel",
-        "framework"
+        "specification"
     ],
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "require": {
         "php": "^8.2",
         "laravel/fortify": "^1.25",
