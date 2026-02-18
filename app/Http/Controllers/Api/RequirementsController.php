@@ -85,7 +85,7 @@ class RequirementsController extends Controller
         return new RequirementResource($requirement);
     }
 
-    public function destroy(Requirement $requirement): Response
+    public function delete(Requirement $requirement): Response
     {
         $requirement->delete();
 

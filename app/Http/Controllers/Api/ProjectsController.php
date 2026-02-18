@@ -105,7 +105,7 @@ class ProjectsController extends Controller
         return new JsonResource($output);
     }
 
-    public function destroy(Project $project): Response
+    public function delete(Project $project): Response
     {
         $project->delete();
 

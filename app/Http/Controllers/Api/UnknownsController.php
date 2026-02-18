@@ -29,7 +29,7 @@ class UnknownsController extends Controller
         return new UnknownResource($unknown);
     }
 
-    public function destroy(Unknown $unknown): Response
+    public function delete(Unknown $unknown): Response
     {
         $unknown->delete();
 
