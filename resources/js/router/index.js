@@ -3,6 +3,8 @@ import NotFound from '@/components/pages/NotFound.vue';
 import projects from './projects';
 import { createRouter, createWebHistory } from 'vue-router';
 
+const base = import.meta.env.VITE_ROUTER_BASE || '/';
+
 const routes = [
     {
         name: 'home',
@@ -24,8 +26,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    base: '/',
-    history: createWebHistory(),
+    history: createWebHistory(base),
     linkActiveClass: 'active',
     linkExactActiveClass: '',
     routes,
