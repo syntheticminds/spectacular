@@ -33,7 +33,7 @@ Route::controller(RequirementsController::class)->group(function () {
     Route::post('requirements/{requirement}/edit', 'update');
     Route::post('requirements/add', 'store');
     Route::post('requirements/{requirement}/delete', 'delete');
-    Route::post('requirements/{requirement}/tasks/complete', 'completeTasks'));
+    Route::post('requirements/{requirement}/tasks/complete', 'completeTasks');
 });
 
 Route::controller(TasksController::class)->group(function () {
