@@ -29,7 +29,7 @@ class TasksController extends Controller
         return new TaskResource($task);
     }
 
-    public function delete(Task $task): Response
+    public function destroy(Task $task): Response
     {
         $task->delete();
 

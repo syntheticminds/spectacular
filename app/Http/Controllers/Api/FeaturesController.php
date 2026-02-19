@@ -29,7 +29,7 @@ class FeaturesController extends Controller
         return new FeatureResource($feature);
     }
 
-    public function delete(Feature $feature): Response
+    public function destroy(Feature $feature): Response
     {
         $feature->delete();
 
