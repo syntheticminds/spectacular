@@ -1,0 +1,175 @@
+import FeatureForm from '@/components/sidepanels/Feature.vue';
+import NotFound from '@/components/pages/NotFound.vue';
+import ProjectCreate from '@/components/pages/ProjectCreate.vue';
+import ProjectEdit from '@/components/sidepanels/ProjectEdit.vue';
+import ProjectOrganise from '@/components/sidepanels/ProjectOrganise.vue';
+import ProjectShow from '@/components/pages/ProjectShow.vue';
+import ProjectsIndex from '@/components/pages/ProjectsIndex.vue';
+import RequirementForm from '@/components/sidepanels/Requirement.vue';
+import UserForm from '@/components/sidepanels/User.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+
+export default function buildRouter(base = null) {
+    // If we haven't been given a base path, look in the environment or just use root
+    if (!base) {
+        base = import.meta.env.VITE_ROUTER_BASE || '/';
+    }
+
+    const router = createRouter({
+        history: createWebHistory(base),
+        scrollBehavior(to, from, saved_position) { // TODO Look at this function again. It can be tidied.
+            if (to.hash) {
+                return; // We handle this in the afterEach() callback.
+            }
+
+            const has_sidepanel = Object.hasOwn(to.matched.at(-1).components, 'sidepanel');
+
+            if (has_sidepanel) {
+                return;
+            }
+
+            if (from.name) {
+                const had_sidepanel = Object.hasOwn(from.matched.at(-1).components, 'sidepanel');
+
+                if (had_sidepanel) {
+                    return;
+                }
+            }
+
+            if (saved_position) {
+                return {...saved_position, behavior: 'instant'};
+            }
+
+            return { top: 0, behavior: 'instant' };
+        },
+        routes: [
+            {
+                name: 'home',
+                path: '/',
+                redirect: { name: 'projects.index' },
+            }, {
+                name: 'projects.index',
+                path: '/projects',
+                component: ProjectsIndex,
+                meta: { title: 'Projects' },
+            },
+            {
+                name: 'projects.create',
+                path: '/projects/create',
+                meta: { title: 'Create project' },
+                component: ProjectCreate,
+            }, {
+                name: 'projects.show',
+                path: '/projects/:project_id',
+                component: ProjectShow,
+                props: true,
+                children: [
+                    {
+                        name: 'projects.edit',
+                        path: 'edit',
+                        meta: { title: 'Edit project' },
+                        components: { sidepanel: ProjectEdit },
+                        props: true,
+                    }, {
+                        name: 'projects.organise',
+                        path: 'organise',
+                        meta: { title: 'Organise project' },
+                        components: { sidepanel: ProjectOrganise },
+                        props: true,
+                    }, 
+
+                    // Users
+                    {
+                        name: 'projects.users.create',
+                        path: 'users/create',
+                        meta: { title: 'Create user' },
+                        components: { sidepanel: UserForm },
+                        props: true,
+                    }, {
+                        name: 'projects.users.edit',
+                        path: 'users/:user_id/edit',
+                        meta: { title: 'Edit user' },
+                        components: { sidepanel: UserForm },
+                        props: true,
+                    },
+
+                    // Features
+                    {
+                        name: 'projects.features.create',
+                        path: 'features/create',
+                        meta: { title: 'Create feature' },
+                        components: { sidepanel: FeatureForm },
+                        props: true,
+                    }, {
+                        name: 'projects.features.edit',
+                        path: 'features/:feature_id/edit',
+                        meta: { title: 'Edit feature' },
+                        components: { sidepanel: FeatureForm },
+                        props: true,
+                    }, {
+                        name: 'projects.features.requirements.create',
+                        path: 'features/:feature_id/requirements/create',
+                        meta: { title: 'Create requirement' },
+                        components: { sidepanel: RequirementForm },
+                        props: true,
+                    },
+
+                    // Requirements
+                    {
+                        name: 'projects.requirements.create',
+                        path: 'requirements/create',
+                        meta: { title: 'Create requirement' },
+                        components: { sidepanel: RequirementForm },
+                        props: true,
+                    }, {
+                        name: 'projects.requirements.edit',
+                        path: 'requirements/:requirement_id/edit',
+                        meta: { title: 'Edit requirement' },
+                        components: { sidepanel: RequirementForm },
+                        props: true,
+                    },
+                ],
+            }, {
+                name: '404',
+                path: '/:pathMatch(.*)*',
+                component: NotFound,
+                meta: { title: 'Not found' },
+            },
+        ],
+    });
+
+    // Remove the splash when we're ready.
+    router.isReady().then(() => {
+        if (document.getElementById('splash')) {
+            document.getElementById('splash').remove();
+            document.getElementById('app').classList.remove('hide');
+        }
+    });
+
+    // Normalises IDs so they're always integers.
+    router.beforeEach(async (to) => {
+        for (const param in to.params) {
+            if (param.endsWith('_id')) {
+                to.params[param] = parseInt(to.params[param]);
+            }
+        }
+    });
+
+    // Scroll hashes smoothly.
+    router.afterEach(to => {
+        if (!to.hash) {
+            return;
+        }
+
+        // We can't use nextTick() because something else happens before mount.
+        setTimeout(() => {
+            const element = document.getElementById(to.hash.substring(1));
+
+            if (element) {
+                element.scrollIntoView();
+            }
+        }, 100);
+    });
+
+    return router;
+}
