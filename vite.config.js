@@ -4,9 +4,23 @@ import path from 'path';
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 
+const contains = (chunk, names) => names.some((part) => chunk.includes(part));
+
 export default defineConfig({
     build: {
-        chunkSizeWarningLimit: 1024,
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (contains(id, ['/@tiptap/', '/prosemirror-'])) {
+                        return 'vendor-editor';
+                    }
+
+                    if (contains(id, ['node_modules'])) {
+                         return 'vendor';
+                    }
+                },
+            },
+        },
     },
     plugins: [
         laravel({
