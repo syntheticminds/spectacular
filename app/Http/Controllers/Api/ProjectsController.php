@@ -10,13 +10,13 @@ use Spectacular\Core\Http\Requests\UpdateProjectRequest;
 use Spectacular\Core\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Facades\DB;
 
 class ProjectsController extends Controller
 {
-    public function index(Request $request): AnonymousResourceCollection
+    public function index(): ResourceCollection
     {
         $projects = Project::query()
             ->withCount([
