@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import api from '@/api';
-import DropdownMenu from '@/components/DropdownMenu.vue';
-import DropdownMenuItem from '@/components/DropdownMenuItem.vue';
-import { useAlertsStore, useTasksStore } from '@/stores';
-import IconSet from '@/components/IconSet.vue';
+import api from '@core/api';
+import DropdownMenu from '@core/components/DropdownMenu.vue';
+import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
+import { useAlertsStore, useTasksStore } from '@core/stores';
+import IconSet from '@core/components/IconSet.vue';
 
 export default {
     components: {

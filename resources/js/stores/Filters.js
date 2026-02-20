@@ -1,4 +1,4 @@
-import { isPlainObject } from '@/helpers';
+import { isPlainObject } from '@core/helpers';
 import { reactive, watch } from 'vue';
 
 export default class Filters {

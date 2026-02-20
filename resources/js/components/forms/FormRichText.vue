@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import InfoPopover from '@/components/InfoPopover.vue';
-import IconSet from '@/components/IconSet.vue';
-import RichTextButton from '@/components/RichTextButton.vue';
+import InfoPopover from '@core/components/InfoPopover.vue';
+import IconSet from '@core/components/IconSet.vue';
+import RichTextButton from '@core/components/RichTextButton.vue';
 import StarterKit from '@tiptap/starter-kit';
 import { Editor, EditorContent } from '@tiptap/vue-3';
 

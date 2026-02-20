@@ -1,12 +1,12 @@
-import FeatureForm from '@/components/sidepanels/Feature.vue';
-import NotFound from '@/components/pages/NotFound.vue';
-import ProjectCreate from '@/components/pages/ProjectCreate.vue';
-import ProjectEdit from '@/components/sidepanels/ProjectEdit.vue';
-import ProjectOrganise from '@/components/sidepanels/ProjectOrganise.vue';
-import ProjectShow from '@/components/pages/ProjectShow.vue';
-import ProjectsIndex from '@/components/pages/ProjectsIndex.vue';
-import RequirementForm from '@/components/sidepanels/Requirement.vue';
-import UserForm from '@/components/sidepanels/User.vue';
+import FeatureForm from '@core/components/sidepanels/Feature.vue';
+import NotFound from '@core/components/pages/NotFound.vue';
+import ProjectCreate from '@core/components/pages/ProjectCreate.vue';
+import ProjectEdit from '@core/components/sidepanels/ProjectEdit.vue';
+import ProjectOrganise from '@core/components/sidepanels/ProjectOrganise.vue';
+import ProjectShow from '@core/components/pages/ProjectShow.vue';
+import ProjectsIndex from '@core/components/pages/ProjectsIndex.vue';
+import RequirementForm from '@core/components/sidepanels/Requirement.vue';
+import UserForm from '@core/components/sidepanels/User.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 export default function buildRouter(base = null) {

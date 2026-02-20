@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import DropdownMenu from '@/components/DropdownMenu.vue';
-import DropdownMenuItem from '@/components/DropdownMenuItem.vue';
-import TextMultiline from '@/components/TextMultiline.vue';
-import UserDelete from '@/components/modals/UserDelete.vue';
-import { useModalStore } from '@/stores';
+import DropdownMenu from '@core/components/DropdownMenu.vue';
+import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
+import TextMultiline from '@core/components/TextMultiline.vue';
+import UserDelete from '@core/components/modals/UserDelete.vue';
+import { useModalStore } from '@core/stores';
 
 export default {
     components: {

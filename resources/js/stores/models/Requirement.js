@@ -1,8 +1,8 @@
 import Model from '../Model';
-import { useAssignmentsStore } from '@/stores';
-import { useFeaturesStore } from '@/stores';
-import { useTasksStore } from '@/stores';
-import { useUnknownsStore } from '@/stores';
+import { useAssignmentsStore } from '@core/stores';
+import { useFeaturesStore } from '@core/stores';
+import { useTasksStore } from '@core/stores';
+import { useUnknownsStore } from '@core/stores';
 
 export default class Requirement extends Model {
     get assignments() {

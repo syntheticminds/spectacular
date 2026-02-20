@@ -81,13 +81,13 @@
 </template>
 
 <script>
-import api from '@/api';
+import api from '@core/api';
 import Draggable from 'vuedraggable';
-import SidepanelLayout from '@/components/layouts/SidepanelLayout.vue';
-import SpinnerButton from '@/components/SpinnerButton.vue';
-import TrackDirty from '@/mixins/TrackDirty';
-import IconSet from '@/components/IconSet.vue';
-import { useAlertsStore, useUsersStore, useFeaturesStore, useProjectsStore, useRequirementsStore } from '@/stores';
+import SidepanelLayout from '@core/components/layouts/SidepanelLayout.vue';
+import SpinnerButton from '@core/components/SpinnerButton.vue';
+import TrackDirty from '@core/mixins/TrackDirty';
+import IconSet from '@core/components/IconSet.vue';
+import { useAlertsStore, useUsersStore, useFeaturesStore, useProjectsStore, useRequirementsStore } from '@core/stores';
 
 export default {
     beforeRouteLeave() {

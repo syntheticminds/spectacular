@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { useModalStore } from '@/stores';
+import { useModalStore } from '@core/stores';
 import { mapState } from 'pinia';
 
 export default {

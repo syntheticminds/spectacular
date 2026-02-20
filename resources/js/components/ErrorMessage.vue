@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import IconSet from '@/components/IconSet.vue';
+import IconSet from '@core/components/IconSet.vue';
 
 export default {
     components: {

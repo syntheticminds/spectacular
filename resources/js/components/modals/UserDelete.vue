@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import api from '@/api';
-import FormInput from '@/components/forms/FormInput.vue';
-import KeyboardShortcuts from '@/mixins/KeyboardShortcuts';
-import ModalLayout from '@/components/layouts/ModalLayout.vue';
-import SpinnerButton from '@/components/SpinnerButton.vue';
-import UniqueId from '@/mixins/UniqueId';
-import { useAlertsStore, useUsersStore } from '@/stores';
+import api from '@core/api';
+import FormInput from '@core/components/forms/FormInput.vue';
+import KeyboardShortcuts from '@core/mixins/KeyboardShortcuts';
+import ModalLayout from '@core/components/layouts/ModalLayout.vue';
+import SpinnerButton from '@core/components/SpinnerButton.vue';
+import UniqueId from '@core/mixins/UniqueId';
+import { useAlertsStore, useUsersStore } from '@core/stores';
 
 export default {
     components: {

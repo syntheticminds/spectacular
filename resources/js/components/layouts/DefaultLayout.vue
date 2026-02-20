@@ -90,10 +90,10 @@
 </template>
 
 <script>
-import DropdownMenu from '@/components/DropdownMenu.vue';
-import DropdownMenuItem from '@/components/DropdownMenuItem.vue';
-import IconSet from '@/components/IconSet.vue';
-import { resetRepositories, useAlertsStore, useModalStore } from '@/stores';
+import DropdownMenu from '@core/components/DropdownMenu.vue';
+import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
+import IconSet from '@core/components/IconSet.vue';
+import { resetRepositories, useAlertsStore, useModalStore } from '@core/stores';
 
 export default {
     components: {

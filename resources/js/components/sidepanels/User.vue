@@ -43,15 +43,15 @@
 </template>
 
 <script>
-import api from '@/api';
-import FormInput from '@/components/forms/FormInput.vue';
-import KeyboardShortcuts from '@/mixins/KeyboardShortcuts';
-import SidepanelLayout from '@/components/layouts/SidepanelLayout.vue';
-import SpinnerButton from '@/components/SpinnerButton.vue';
-import TrackDirty from '@/mixins/TrackDirty';
-import UniqueId from '@/mixins/UniqueId';
-import ValidationMessages from '@/components/ValidationMessages.vue';
-import { useAlertsStore, useUsersStore } from '@/stores';
+import api from '@core/api';
+import FormInput from '@core/components/forms/FormInput.vue';
+import KeyboardShortcuts from '@core/mixins/KeyboardShortcuts';
+import SidepanelLayout from '@core/components/layouts/SidepanelLayout.vue';
+import SpinnerButton from '@core/components/SpinnerButton.vue';
+import TrackDirty from '@core/mixins/TrackDirty';
+import UniqueId from '@core/mixins/UniqueId';
+import ValidationMessages from '@core/components/ValidationMessages.vue';
+import { useAlertsStore, useUsersStore } from '@core/stores';
 
 export default {
     beforeRouteLeave() {

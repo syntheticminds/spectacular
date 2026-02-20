@@ -1,5 +1,5 @@
 import { mande } from 'mande';
-import { useAlertsStore } from '@/stores';
+import { useAlertsStore } from '@core/stores';
 import { isBefore, subMinutes } from 'date-fns';
 
 // TODO Switch to getting CSRF on demand and replaying requests if necessary.

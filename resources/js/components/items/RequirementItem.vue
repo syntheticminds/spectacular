@@ -62,15 +62,15 @@
 </template>
 
 <script>
-import api from '@/api';
-import DropdownMenu from '@/components/DropdownMenu.vue';
-import DropdownMenuItem from '@/components/DropdownMenuItem.vue';
-import IconSet from '@/components/IconSet.vue';
-import RichText from '@/components/RichText.vue';
-import UnknownItem from '@/components/items/UnknownItem.vue';
-import RequirementDelete from '@/components/modals/RequirementDelete.vue';
-import TaskItem from '@/components/items/TaskItem.vue';
-import { useAlertsStore, useModalStore, useTasksStore, useRequirementsStore } from '@/stores';
+import api from '@core/api';
+import DropdownMenu from '@core/components/DropdownMenu.vue';
+import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
+import IconSet from '@core/components/IconSet.vue';
+import RichText from '@core/components/RichText.vue';
+import UnknownItem from '@core/components/items/UnknownItem.vue';
+import RequirementDelete from '@core/components/modals/RequirementDelete.vue';
+import TaskItem from '@core/components/items/TaskItem.vue';
+import { useAlertsStore, useModalStore, useTasksStore, useRequirementsStore } from '@core/stores';
 
 export default {
     components: {

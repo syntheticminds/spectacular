@@ -1,5 +1,5 @@
 import Model from '../Model';
-import { useProjectsStore, useRequirementsStore } from '@/stores';
+import { useProjectsStore, useRequirementsStore } from '@core/stores';
 
 export default class Feature extends Model {
     get has_tasks () {

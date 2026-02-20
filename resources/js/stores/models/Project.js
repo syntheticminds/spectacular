@@ -3,7 +3,7 @@ import Model from '../Model';
 import {
     useFeaturesStore,
     useUsersStore
-} from '@/stores';
+} from '@core/stores';
 
 export default class Project extends Model {
     constructor(data) {

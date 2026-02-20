@@ -47,17 +47,17 @@
 </template>
 
 <script>
-import api from '@/api';
-import Card from '@/components/Card.vue';
-import FormInput from '@/components/forms/FormInput.vue';
-import IconSet from '@/components/IconSet.vue';
-import KeyboardShortcuts from '@/mixins/KeyboardShortcuts';
-import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
-import SidepanelLayout from '@/components/layouts/SidepanelLayout.vue';
-import SpinnerButton from '@/components/SpinnerButton.vue';
-import TrackDirty from '@/mixins/TrackDirty';
-import UniqueId from '@/mixins/UniqueId';
-import { useAlertsStore, useProjectsStore } from '@/stores';
+import api from '@core/api';
+import Card from '@core/components/Card.vue';
+import FormInput from '@core/components/forms/FormInput.vue';
+import IconSet from '@core/components/IconSet.vue';
+import KeyboardShortcuts from '@core/mixins/KeyboardShortcuts';
+import DefaultLayout from '@core/components/layouts/DefaultLayout.vue';
+import SidepanelLayout from '@core/components/layouts/SidepanelLayout.vue';
+import SpinnerButton from '@core/components/SpinnerButton.vue';
+import TrackDirty from '@core/mixins/TrackDirty';
+import UniqueId from '@core/mixins/UniqueId';
+import { useAlertsStore, useProjectsStore } from '@core/stores';
 
 export default {
     beforeRouteLeave() {

@@ -1,6 +1,6 @@
 import Model from '../Model';
-import { useRequirementsStore } from '@/stores';
-import { useUsersStore } from '@/stores';
+import { useRequirementsStore } from '@core/stores';
+import { useUsersStore } from '@core/stores';
 
 export default class Assignment extends Model {
     get user() {

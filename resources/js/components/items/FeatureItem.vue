@@ -26,13 +26,13 @@
 </template>
 
 <script>
-import DropdownMenu from '@/components/DropdownMenu.vue';
-import DropdownMenuItem from '@/components/DropdownMenuItem.vue';
-import RichText from '@/components/RichText.vue';
-import RequirementItem from '@/components/items/RequirementItem.vue';
-import FeatureDelete from '@/components/modals/FeatureDelete.vue';
-import IconSet from '@/components/IconSet.vue';
-import { useModalStore } from '@/stores';
+import DropdownMenu from '@core/components/DropdownMenu.vue';
+import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
+import RichText from '@core/components/RichText.vue';
+import RequirementItem from '@core/components/items/RequirementItem.vue';
+import FeatureDelete from '@core/components/modals/FeatureDelete.vue';
+import IconSet from '@core/components/IconSet.vue';
+import { useModalStore } from '@core/stores';
 
 export default {
     components: {

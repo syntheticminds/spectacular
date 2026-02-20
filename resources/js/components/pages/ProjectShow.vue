@@ -95,24 +95,24 @@
 </template>
 
 <script>
-import api from '@/api';
-import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
-import DropdownMenu from '@/components/DropdownMenu.vue';
-import DropdownMenuDivider from '@/components/DropdownMenuDivider.vue';
-import DropdownMenuItem from '@/components/DropdownMenuItem.vue';
-import FeatureItem from '@/components/items/FeatureItem.vue';
-import IconSet from '@/components/IconSet.vue';
-import RichText from '@/components/RichText.vue';
-import NavbarButton from '@/components/NavbarButton.vue';
-import ProjectDelete from '@/components/modals/ProjectDelete.vue';
-import ProjectFilters from '@/components/sidebars/ProjectFilters.vue';
-import ProjectOutline from '@/components/sidebars/ProjectOutline.vue';
-import SidebarToggler from '@/components/SidebarToggler.vue';
-import Tooltip from '@/components/Tooltip.vue';
-import UserItem from '@/components/items/UserItem.vue';
-import { useModalStore, useProjectsStore } from '@/stores';
+import api from '@core/api';
+import DefaultLayout from '@core/components/layouts/DefaultLayout.vue';
+import DropdownMenu from '@core/components/DropdownMenu.vue';
+import DropdownMenuDivider from '@core/components/DropdownMenuDivider.vue';
+import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
+import FeatureItem from '@core/components/items/FeatureItem.vue';
+import IconSet from '@core/components/IconSet.vue';
+import RichText from '@core/components/RichText.vue';
+import NavbarButton from '@core/components/NavbarButton.vue';
+import ProjectDelete from '@core/components/modals/ProjectDelete.vue';
+import ProjectFilters from '@core/components/sidebars/ProjectFilters.vue';
+import ProjectOutline from '@core/components/sidebars/ProjectOutline.vue';
+import SidebarToggler from '@core/components/SidebarToggler.vue';
+import Tooltip from '@core/components/Tooltip.vue';
+import UserItem from '@core/components/items/UserItem.vue';
+import { useModalStore, useProjectsStore } from '@core/stores';
 import { route } from 'ziggy-js';
-import { Ziggy } from '@/ziggy.js';
+import { Ziggy } from '@core/ziggy.js';
 
 export default {
     components: {

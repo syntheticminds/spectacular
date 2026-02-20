@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import api from '@/api';
-import Card from '@/components/Card.vue';
-import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
-import IconSet from '@/components/IconSet.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
-import ProjectItem from '@/components/items/ProjectItem.vue';
+import api from '@core/api';
+import Card from '@core/components/Card.vue';
+import DefaultLayout from '@core/components/layouts/DefaultLayout.vue';
+import IconSet from '@core/components/IconSet.vue';
+import LoadingSpinner from '@core/components/LoadingSpinner.vue';
+import ProjectItem from '@core/components/items/ProjectItem.vue';
 import { formatDistance } from 'date-fns';
-import { useProjectsStore } from '@/stores';
+import { useProjectsStore } from '@core/stores';
 
 export default {
     components: {

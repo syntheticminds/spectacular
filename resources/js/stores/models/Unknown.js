@@ -1,5 +1,5 @@
 import Model from '../Model';
-import { useRequirementsStore } from '@/stores';
+import { useRequirementsStore } from '@core/stores';
 
 export default class Unknown extends Model {
     get requirement() {

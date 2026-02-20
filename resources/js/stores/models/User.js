@@ -1,6 +1,6 @@
 import Model from '../Model';
-import { useProjectsStore } from '@/stores';
-import { useRequirementsStore } from '@/stores';
+import { useProjectsStore } from '@core/stores';
+import { useRequirementsStore } from '@core/stores';
 
 export default class User extends Model {
     get project() {
