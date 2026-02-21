@@ -1,6 +1,6 @@
 import UserMenu from '@core/components/UserMenu.vue';
 
-const components = {
+const defaults = {
     UserMenu,
 };
 
