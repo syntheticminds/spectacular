@@ -73,35 +73,22 @@
 <script>
 import api from '@core/api';
 import DefaultLayout from '@core/components/layouts/DefaultLayout.vue';
-import DropdownMenu from '@core/components/DropdownMenu.vue';
-import DropdownMenuDivider from '@core/components/DropdownMenuDivider.vue';
-import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
 import FeatureItem from '@core/components/items/FeatureItem.vue';
 import IconSet from '@core/components/IconSet.vue';
 import RichText from '@core/components/RichText.vue';
-import NavbarButton from '@core/components/NavbarButton.vue';
-import ProjectDelete from '@core/components/modals/ProjectDelete.vue';
 import ProjectFilters from '@core/components/sidebars/ProjectFilters.vue';
 import ProjectOutline from '@core/components/sidebars/ProjectOutline.vue';
-import Tooltip from '@core/components/Tooltip.vue';
 import UserItem from '@core/components/items/UserItem.vue';
-import { useModalStore, useProjectsStore } from '@core/stores';
-import { route } from 'ziggy-js';
-import { Ziggy } from '@core/ziggy.js';
+import { useProjectsStore } from '@core/stores';
 
 export default {
     components: {
         DefaultLayout,
-        DropdownMenu,
-        DropdownMenuDivider,
-        DropdownMenuItem,
         FeatureItem,
         IconSet,
         RichText,
-        NavbarButton,
         ProjectFilters,
         ProjectOutline,
-        Tooltip,
         UserItem,
     },
     computed: {
@@ -135,12 +122,6 @@ export default {
         },
         checkScrollPosition() {
             this.is_scrolled_to_top = window.scrollY === 0;
-        },
-        openProjectDeleteModal() {
-            useModalStore().open(ProjectDelete, {project: this.project});
-        },
-        route(name, params = {}, absolute = false) {
-            return route(name, params, absolute, Ziggy);
         },
         scrollToBottom() {
             window.scrollTo({ top: document.body.scrollHeight });

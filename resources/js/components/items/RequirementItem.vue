@@ -54,17 +54,14 @@
 <script>
 import DropdownMenu from '@core/components/DropdownMenu.vue';
 import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
-import IconSet from '@core/components/IconSet.vue';
 import RichText from '@core/components/RichText.vue';
 import UnknownItem from '@core/components/items/UnknownItem.vue';
-import RequirementDelete from '@core/components/modals/RequirementDelete.vue';
 import TaskItem from '@core/components/items/TaskItem.vue';
 
 export default {
     components: {
         DropdownMenu,
         DropdownMenuItem,
-        IconSet,
         RichText,
         UnknownItem,
         TaskItem
