@@ -1,3 +1,1 @@
-<template>
-    Woof
-</template>
+<template />

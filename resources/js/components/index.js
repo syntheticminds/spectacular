@@ -5,7 +5,11 @@ const components = {
 };
 
 export default {
-    install(app) {
-        Object.entries(components).forEach(([name, component]) => app.component(name, component));
+    install(app, overrides = {}) {
+        const components = { ...defaults, ...overrides };
+
+        Object.entries(components).forEach(([name, component]) => {
+            app.component(name, component);
+        });
     },
 };
