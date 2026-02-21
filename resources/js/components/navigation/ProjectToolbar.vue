@@ -14,6 +14,8 @@
         <DropdownMenuItem :href="route('export.html', { project })" icon="html-file" download>HTML</DropdownMenuItem>
         <DropdownMenuItem :href="route('export.markdown', { project })" icon="markdown-file" download>Markdown</DropdownMenuItem>
     </DropdownMenu>
+
+    <slot name="after" />
 </template>
 
 <script>
