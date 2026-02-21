@@ -1,17 +1,21 @@
 import '../css/app.css';
 
-import App from './components/App.vue';
-import buildRouter from './router';
+import App from '@core/components/App.vue';
+import buildRouter from '@core/router';
+import extensions from '@core/extensions';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate)
 
 const router = buildRouter();
 
-createApp(App)
+const app = createApp(App)
     .use(pinia)
-    .use(router)
-    .mount('#app');
+    .use(router);
+
+Object.entries(extensions).forEach(([name, component]) => app.component(name, component));
+
+app.mount('#app')

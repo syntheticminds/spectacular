@@ -19,6 +19,8 @@
 
         <div class="flex w-full items-center justify-end gap-2 pr-4">
             <slot name="menu"></slot>
+            
+            <UserMenu />
         </div>
     </nav>
 
