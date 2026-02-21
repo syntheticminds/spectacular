@@ -15,17 +15,7 @@
             <div class="flex items-center gap-4 bg-gray-200 rounded-t-xl p-4 py-5">
                 <h1 class="text-xl font-semibold mr-auto"><a :href="'#requirement_' + requirement.id">{{ requirement.title }}</a></h1>
 
-                <div class="flex items-center print:hidden">
-                    <RouterLink :to="{ name: 'projects.requirements.edit', params: { requirement_id: requirement.id }}" class="p-2">
-                        <IconSet name="edit" />
-                    </RouterLink>
-
-                    <DropdownMenu>
-                        <DropdownMenuItem v-if="requirement.has_tasks && !requirement.is_complete" type="button" :loading="is_waiting_for_complete" icon="check-all" @click.stop="complete()">Complete all tasks</DropdownMenuItem>
-                        <DropdownMenuItem v-if="requirement.is_blocked" type="button" :loading="is_waiting_for_unblock" icon="unblock" @click.stop="unblock()">Unblock</DropdownMenuItem>
-                        <DropdownMenuItem @click="openRequirementDeleteModal" icon="trash" class="dropdown-item" danger>Delete</DropdownMenuItem>
-                    </DropdownMenu>
-                </div>
+                <RequirementToolbar :requirement />
             </div>
 
             <div class="bg-white space-y-4 py-4">
@@ -62,7 +52,6 @@
 </template>
 
 <script>
-import api from '@core/api';
 import DropdownMenu from '@core/components/DropdownMenu.vue';
 import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
 import IconSet from '@core/components/IconSet.vue';
@@ -70,7 +59,6 @@ import RichText from '@core/components/RichText.vue';
 import UnknownItem from '@core/components/items/UnknownItem.vue';
 import RequirementDelete from '@core/components/modals/RequirementDelete.vue';
 import TaskItem from '@core/components/items/TaskItem.vue';
-import { useAlertsStore, useModalStore, useTasksStore, useRequirementsStore } from '@core/stores';
 
 export default {
     components: {
@@ -89,36 +77,7 @@ export default {
     data() {
         return {
             'highlight': false,
-            'is_waiting_for_complete': false,
-            'is_waiting_for_unblock': false
         };
-    },
-    methods: {
-        complete() {
-            this.is_waiting_for_complete = true;
-
-            api.post('requirements/' + this.requirement.id + '/tasks/complete')
-                .then((result) => {
-                    useTasksStore().saveMany(result.data);
-
-                    useAlertsStore().push('Requirement completed.');
-                })
-                .finally(() => this.is_waiting_for_complete = false);
-        },
-        openRequirementDeleteModal() {
-            useModalStore().open(RequirementDelete, {requirement: this.requirement});
-        },
-        unblock() {
-            this.is_waiting_for_unblock = true;
-
-            api.post('requirements/' + this.requirement.id + '/edit', {blocked_reason: null})
-                .then((result) => {
-                    useRequirementsStore().save(result.data);
-
-                    useAlertsStore().push('Requirement unblocked.');
-                })
-                .finally(() => this.is_waiting_for_unblock = false);
-        }
     },
     mounted() {
         if (this.is_active) {

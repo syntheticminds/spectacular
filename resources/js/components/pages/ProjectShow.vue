@@ -1,35 +1,11 @@
 <template>
     <DefaultLayout expanded>
         <template #toggles="{ openSidebar, closeSidebar, show_sidebar }">
-            <SidebarToggler :project :sidebar :open="show_sidebar" @change="changeSidebar($event, show_sidebar, openSidebar, closeSidebar)" />
+            <SidebarSwitches :project :sidebar :open="show_sidebar" @change="changeSidebar($event, show_sidebar, openSidebar, closeSidebar)" />
         </template>
 
         <template #menu>
-            <NavbarButton :to="{ name: 'projects.requirements.create' }" icon="plus-lg" tooltip="Add requirement">Add requirement</NavbarButton>
-            <NavbarButton :to="{ name: 'projects.organise' }" icon="organise" tooltip="Organise" />
-
-            <DropdownMenu>
-                <template #trigger="{ toggle }">
-                    <Tooltip text="Download">
-                        <button type="button" class="flex items-center whitespace-nowrap gap-2 p-2 rounded-full border border-gray-100 transition-colors" @click="toggle">
-                            <IconSet name="download" class="size-6" />
-                        </button>
-                    </Tooltip>
-                </template>
-
-                <DropdownMenuItem :href="route('export.html', { project })" icon="html-file" download>HTML</DropdownMenuItem>
-                <DropdownMenuItem :href="route('export.markdown', { project })" icon="markdown-file" download>Markdown</DropdownMenuItem>
-            </DropdownMenu>
-
-            <DropdownMenu class="sm:hidden">
-                <template #trigger="{ toggle }">
-                    <button type="button" @click="toggle">
-                        <IconSet name="menu" class="size-6" />
-                    </button>
-                </template>
-
-                <DropdownMenuItem :to="{ name: 'projects.organise' }" icon="organise">Organise</DropdownMenuItem>
-            </DropdownMenu>
+            <ProjectToolbar :project />
         </template>
 
         <template #sidebar="{ navigate }">
@@ -107,7 +83,6 @@ import NavbarButton from '@core/components/NavbarButton.vue';
 import ProjectDelete from '@core/components/modals/ProjectDelete.vue';
 import ProjectFilters from '@core/components/sidebars/ProjectFilters.vue';
 import ProjectOutline from '@core/components/sidebars/ProjectOutline.vue';
-import SidebarToggler from '@core/components/SidebarToggler.vue';
 import Tooltip from '@core/components/Tooltip.vue';
 import UserItem from '@core/components/items/UserItem.vue';
 import { useModalStore, useProjectsStore } from '@core/stores';
@@ -126,7 +101,6 @@ export default {
         NavbarButton,
         ProjectFilters,
         ProjectOutline,
-        SidebarToggler,
         Tooltip,
         UserItem,
     },

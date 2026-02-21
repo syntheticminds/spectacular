@@ -1,5 +1,5 @@
 <template>
-    <Tooltip :enabled="!has_slot" :text="tooltip" class="hidden sm:block">
+    <Tooltip :enabled="!has_slot" :text="tooltip">
         <RouterLink
             :to="destination"
             class="flex items-center whitespace-nowrap p-2 rounded-full border border-gray-100 transition-colors"

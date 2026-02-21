@@ -5,14 +5,7 @@
         class="mb-4 bg-white p-8 py-4 shadow rounded-3xl print:p-0 print:shadow-none outline-2 duration-500"
         :class="is_active || highlight ? 'outline-offset-3 outline-gray-800' : 'outline-transparent'">
 
-        <div class="flex justify-end gap-1 mb-3 -mx-4">
-            <RouterLink :to="{ name: 'projects.features.requirements.create', params: { feature_id: feature.id }}" class="btn btn-primary"><IconSet name="plus-lg" /> Add requirement</RouterLink>
-            
-            <DropdownMenu>
-                <DropdownMenuItem :to="{ name: 'projects.features.edit', params: { feature_id: feature.id }}" icon="edit">Edit</DropdownMenuItem>
-                <DropdownMenuItem @click="openFeatureDeleteModal" icon="trash" danger>Delete</DropdownMenuItem>
-            </DropdownMenu>
-        </div>
+        <FeatureToolbar :feature />
 
         <h3 class="font-semibold text-2xl mb-2"><a :href="'#feature_' + feature.id">{{ feature.name }}</a></h3>
         
@@ -26,19 +19,11 @@
 </template>
 
 <script>
-import DropdownMenu from '@core/components/DropdownMenu.vue';
-import DropdownMenuItem from '@core/components/DropdownMenuItem.vue';
 import RichText from '@core/components/RichText.vue';
 import RequirementItem from '@core/components/items/RequirementItem.vue';
-import FeatureDelete from '@core/components/modals/FeatureDelete.vue';
-import IconSet from '@core/components/IconSet.vue';
-import { useModalStore } from '@core/stores';
 
 export default {
     components: {
-        DropdownMenu,
-        DropdownMenuItem,
-        IconSet,
         RichText,
         RequirementItem
     },
@@ -61,11 +46,6 @@ export default {
         return {
             'highlight': false,
         };
-    },
-    methods: {
-        openFeatureDeleteModal() {
-            useModalStore().open(FeatureDelete, {feature: this.feature});
-        },
     },
     mounted() { 
         if (this.is_active) {

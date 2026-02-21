@@ -69,7 +69,7 @@
             </div>
             
             <div class="mb-4">
-                <FormRichText :id="elementId('description')" label="Description" heading="5" :error="errors.description" v-model="form.description">
+                <FormRichText :id="elementId('description')" label="Description" :heading="5" :error="errors.description" v-model="form.description">
                     <template v-slot:help>
                         <p class="font-semibold mb-4">Use this field to give more detail about this requirement and an acceptance criteria.</p>
                         <p class="mb-4">Try to include:</p>

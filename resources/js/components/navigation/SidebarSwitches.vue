@@ -1,4 +1,4 @@
-<template>
+<template>    
     <div class="flex items-center gap-2 text-sm">
         <Tooltip text="Outline">
             <button
@@ -10,6 +10,7 @@
                 <IconSet name="outline" class="size-6 shrink-0" />
             </button>
         </Tooltip>
+        
         <Tooltip text="Filters">
             <button
                 type="button"
@@ -22,6 +23,8 @@
                 <div v-if="has_filters" class="absolute top-0 right-0 size-3 bg-indigo-600 ring-2 ring-white rounded-full"></div>
             </button>
         </Tooltip>
+
+        <slot name="after" />
     </div>
 </template>
 
